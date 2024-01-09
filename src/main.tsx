@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
+import { RouterProvider } from 'react-router-dom';
+import { browserRouter } from './routes';
 import './index.css';
 
 const rootElementId = `root`;
@@ -12,6 +13,6 @@ if (!rootElement) {
 
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={browserRouter} />
   </React.StrictMode>
 );
