@@ -3,6 +3,7 @@ import Button from '../shared/button';
 import { Input } from '../shared/input';
 import styles from './result.form.module.css';
 import { formatDate } from '../shared/utils/time';
+import { Label } from '../shared/label';
 
 export type ResultFormState = {
   result: number;
@@ -39,14 +40,18 @@ export function ResultForm({ onSubmit }: ResultFormProps) {
 
   return (
     <form autoComplete="off" className={styles.root} onSubmit={handleSubmit}>
+      <Label htmlFor="result"> Результат у хвилинах</Label>
       <Input
+        id="result"
         type="number"
         required
         step="0.1"
         value={result}
         onChange={setResult}
       />
-      <Input type="date" required value={date} onChange={setDate} />
+
+      <Label htmlFor="date"> Дата пострілу</Label>
+      <Input id="date" type="date" required value={date} onChange={setDate} />
 
       <Button>Save</Button>
     </form>
